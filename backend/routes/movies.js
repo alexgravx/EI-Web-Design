@@ -22,10 +22,11 @@ router.post('/new', function (req, res) {
 
   movieRepository
     .insert(newMovie)
-    .then(function () {
-      res.status(201).json({
-        message: `Le nouveau film vient d'être ajouté avec l'id ${newMovie.id}`, // newDocument reliquat, marche avec newDocument.identifiers[0].id, on utilise un format json de preference apres le .json, meme avec une string templatée
-      });
+    .then(function (newDocument) {
+      res.status(201).json(newDocument);
+      //res.status(201).json({
+        //message: `Le nouveau film vient d'être ajouté avec l'id ${newMovie.id}`, // newDocument reliquat, marche avec newDocument.identifiers[0].id, on utilise un format json de preference apres le .json, meme avec une string templatée
+      //});
     })
     .catch(function (error) {
       console.error(error);
