@@ -25,6 +25,7 @@ const Movie = new typeorm.EntitySchema({
     genres: {
       type: 'many-to-many',
       target: 'Genre',
+      joinTable: true,
     },
   },
 });
