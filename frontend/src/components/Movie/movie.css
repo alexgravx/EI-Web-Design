@@ -1,0 +1,33 @@
+.films {
+  padding: 10px 10px 10px 10px;
+  background-color: #282c34;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.movies-posters {
+  width: 20%;
+  min-width: 250px;
+  margin-top: 2rem;
+  font-size: 15px;
+  font-family: 'Lucida Console', monospace;
+}
+
+.movie-image:hover {
+  animation: zoom 1 0.1s linear forwards;
+}
+
+@keyframes zoom {
+  from {
+    width: 200px;
+    height: 300px;
+  }
+  to {
+    width: 220px;
+    height: 330px;
+  }
+}
