@@ -16,18 +16,3 @@
   font-size: 15px;
   font-family: 'Lucida Console', monospace;
 }
-
-.movie-image:hover {
-  animation: zoom 1 0.1s linear forwards;
-}
-
-@keyframes zoom {
-  from {
-    width: 200px;
-    height: 300px;
-  }
-  to {
-    width: 220px;
-    height: 330px;
-  }
-}

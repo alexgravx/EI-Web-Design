@@ -8,12 +8,15 @@ const User = new typeorm.EntitySchema({
       type: Number,
       generated: true,
     },
-    email: {
+    nickname: {
       type: String,
       unique: true,
     },
-    firstname: { type: String },
-    lastname: { type: String },
+    name: { type: String },
+    birthday: { type: String },
+    gender: { type: Number },
+    bio: { type: String },
+    popularity: { type: String },
   },
 });
 
