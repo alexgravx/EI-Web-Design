@@ -1,25 +1,46 @@
+import React, { useState } from 'react';
 import './movie.css';
 
-function movie({ movies }) {
+function Movie({ movies }) {
+  const [currentMovie, setCurrentMovie] = useState(null);
+
+  const openPopup = (movie) => {
+    setCurrentMovie(movie);
+  };
+
+  const closePopup = () => {
+    setCurrentMovie(null);
+  };
+
   return (
     <div className="films">
       {movies.map((film) => (
-        <div className="movies-posters">
+        <div className="movies-posters" key={film.id}>
           <img
             className="movie-image"
             alt="poster"
             src={`https://image.tmdb.org/t/p/w1280${film.poster_path}`}
-            height="300"
-            width="200"
+            height="150"
+            width="100"
+            onClick={() => openPopup(film)}
           />
-          <div className="movies-details">
-            <p>{film.original_title}</p>
-            <p>{film.release_date}</p>
-          </div>
         </div>
       ))}
+      {currentMovie && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>{currentMovie.title}</h2>
+            <img
+              className="popup-image"
+              alt="poster"
+              src={`https://image.tmdb.org/t/p/w1280${currentMovie.poster_path}`}
+            />
+            <button onClick={closePopup}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-export default movie;
+export default Movie;
