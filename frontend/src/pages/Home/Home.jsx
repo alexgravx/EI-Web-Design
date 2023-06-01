@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Movie from '../../components/Movie/movie.jsx';
+import Movie from '../../components/Movie/Movie.jsx';
 
 import './Home.css';
-import Banner from '../../components/banner/banner.jsx';
+import Banner from '../../components/Banner/Banner.jsx';
 function useFetchMovies() {
   const [movies, SetMovies] = useState([]);
 

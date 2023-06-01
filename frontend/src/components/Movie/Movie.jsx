@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './movie.css';
+import './Movie.css';
 
 function Movie({ movies }) {
   const [currentMovie, setCurrentMovie] = useState(null);
