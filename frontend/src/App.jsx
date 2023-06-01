@@ -7,7 +7,7 @@ import Users from './pages/Users/Users';
 import Navbar from './components/Navbar/Navbar';
 import Movies from './pages/MovieDDB/Movies';
 
-const App = () => {
+function App() {
   return (
     <div>
       <Navbar />
