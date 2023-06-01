@@ -8,6 +8,10 @@
   pointer-events: none;
 }
 
+.search-header {
+  padding: 50px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 5s ease-in-out;
