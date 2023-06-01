@@ -27,13 +27,18 @@ function useFetchMovies() {
 function Home() {
   // const [movieName, setMovieName] = useState(''); Pour la barre de recherche
   var movies = useFetchMovies();
-  movies = movies.slice(0, 1000);
+  movies = movies.slice(0, 2500);
   const [filteredMovies, setFilteredMovies] = useState([]);
   console.log(movies);
 
   useEffect(() => {
     const filterMovies = () => {
-      const filtered = movies.filter((film) => film.adult === false);
+      const filtered = movies.filter(
+        (film) =>
+          film.adult === false &&
+          film.poster_path != null &&
+          film.backdrop_path != null
+      );
       setFilteredMovies(filtered);
     };
 
