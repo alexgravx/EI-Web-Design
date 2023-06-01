@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Movie from '../../components/Movie/movie.jsx';
-import logo from './logo2.png';
-import './Home.css';
 
+import './Home.css';
+import Banner from '../../components/banner/banner.jsx';
 function useFetchMovies() {
   const [movies, SetMovies] = useState([]);
 
@@ -46,6 +46,7 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
+        <Banner />
         <h1 className="WebsiteName"> PopMovie</h1>
       </header>
       <div className="page_container">

@@ -11,7 +11,7 @@
 
 .movies-posters {
   width: 5%;
-  min-width: 125px;
+  min-width: 120px;
   margin-top: 2rem;
   font-size: 15px;
   font-family: 'Lucida Console', monospace;
@@ -46,7 +46,7 @@
 
 .popup img {
   width: 100px;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
   margin-bottom: 10px;
 }
