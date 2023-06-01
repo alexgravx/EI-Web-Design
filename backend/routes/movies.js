@@ -1,6 +1,7 @@
 import express from 'express';
 import { appDataSource } from '../datasource.js';
 import Movie from '../entities/movies.js';
+import insert_movies from '../utils/insert_bdd.js';
 
 const router = express.Router();
 
@@ -11,6 +12,11 @@ router.get('/', function (req, res) {
     .then(function (movies) {
       res.json({ movies: movies });
     });
+});
+
+router.post('/dump_bdd', function (req, res) {
+  insert_movies('./backend/bdd_dumps');
+  res.status(201);
 });
 
 router.post('/new', function (req, res) {
@@ -24,9 +30,6 @@ router.post('/new', function (req, res) {
     .insert(newMovie)
     .then(function (newDocument) {
       res.status(201).json(newDocument);
-      //res.status(201).json({
-        //message: `Le nouveau film vient d'être ajouté avec l'id ${newMovie.id}`, // newDocument reliquat, marche avec newDocument.identifiers[0].id, on utilise un format json de preference apres le .json, meme avec une string templatée
-      //});
     })
     .catch(function (error) {
       console.error(error);
