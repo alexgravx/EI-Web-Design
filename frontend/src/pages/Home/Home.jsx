@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Movie from '../../components/Movie/movie.jsx';
 import './Home.css';
+import Movie from '../../components/Movie/Movie.jsx';
+import Banner from '../../components/Banner/Banner.jsx';
 
 function useFetchMovies() {
   const [movies, setMovies] = useState([]);
@@ -42,9 +43,10 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="WebsiteName"> PopMovie</h1>
+        <Banner movies={filteredMovies} />
       </header>
       <div className="page_container">
+        <p className='popu'>Films Populaires</p>
         <Movie movies={filteredMovies} />
       </div>
     </div>
