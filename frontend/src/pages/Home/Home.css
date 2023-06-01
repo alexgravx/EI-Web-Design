@@ -1,31 +1,17 @@
 .App {
   text-align: center;
+  color: #101010;
 }
 
 .WebsiteName {
-  color: white;
+  color: rgb(246, 218, 218);
 }
 
-.WebsiteName:hover {
-  color: royalblue;
-  font-size: 70px;
-}
 
-.App-logo {
-  padding: 0 150px 0 150px;
-  height: 25vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 5s ease-in-out;
-  }
-}
 
 .App-header {
   padding: 10px 10px 30px 10px;
-  background-color: #282c34;
+  background-color: #101010;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,29 +20,5 @@
   color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-.input {
-  width: 40%;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  transition: width 1s ease-in-out;
-}
 
-.input:focus {
-  width: 60%;
-}
