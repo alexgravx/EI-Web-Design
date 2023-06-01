@@ -5,14 +5,19 @@ import Home from './pages/Home/Home';
 //import Search from './pages/Search/search';<Route path="addmovie" element={<Addmovie />} />
 import Users from './pages/Users/Users';
 import Navbar from './components/Navbar/Navbar';
+import Movies from './pages/MovieDDB/Movies';
+import Search from './pages/Search/Search';
 
-const App = () => {
+function App() {
   return (
     <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="search" element={<Search />} />
         <Route path="users" element={<Users />} />
+        <Route path="movies" element={<Movies />} />
+        <Route path="about" element={<About />} />
       </Routes>
     </div>
   );
