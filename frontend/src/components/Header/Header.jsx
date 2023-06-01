@@ -8,6 +8,10 @@ const Header = () => {
         Home
       </Link>
       <div>|</div>
+      <Link className="Link" to="/search">
+        Search
+      </Link>
+      <div>|</div>
       <Link className="Link" to="/counter">
         Counter
       </Link>

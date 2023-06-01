@@ -5,12 +5,14 @@ import Layout from './components/Layout/Layout';
 import Counter from './pages/Counter/Counter';
 import Users from './pages/Users/Users';
 import Movies from './pages/MovieDDB/Movies';
+import Search from './pages/Search/Search';
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="search" element={<Search />} />
         <Route path="counter" element={<Counter />} />
         <Route path="users" element={<Users />} />
         <Route path="movies" element={<Movies />} />
