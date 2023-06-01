@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Banner.css'; // Import the CSS file for styling
 
 const Banner = () => {
-  const images = ['https://image.tmdb.org/t/p/w1280/2hq8EKF6kaUyOxB9KhmIb5JUxEe.jpg', 'https://image.tmdb.org/t/p/w1280/jAMVKvqxdNbUY2YQWhCclYI6coP.jpg', 'https://image.tmdb.org/t/p/w1280/wbOCkfUNOnhJbWwKJIH0I4QLBkz.jpg']; 
+  const images = ['https://image.tmdb.org/t/p/w1280/jAMVKvqxdNbUY2YQWhCclYI6coP.jpg', 'https://image.tmdb.org/t/p/w1280/jAMVKvqxdNbUY2YQWhCclYI6coP.jpg', 'https://image.tmdb.org/t/p/w1280/jAMVKvqxdNbUY2YQWhCclYI6coP.jpg']; // Add your image paths here
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {

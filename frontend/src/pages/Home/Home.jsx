@@ -46,9 +46,10 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <Banner />
+        <Banner movies={filteredMovies} />
       </header>
       <div className="page_container">
+        <p className='popu'>Films Populaires</p>
         <Movie movies={filteredMovies} />
       </div>
     </div>
