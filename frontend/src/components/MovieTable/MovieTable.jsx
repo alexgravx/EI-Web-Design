@@ -10,18 +10,23 @@ function MoviesTable({ movies, onSuccessfulMovieDeletion }) {
 
   return (
     <div>
-      <table className="movies-table">
+      <table className="white-table">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Titre</th>
             <th>Date</th>
+            <th>Vote</th>
+            <th>Durée en min</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {movies.map((movie) => (
-            <tr key={movie.name}>
-              <td>{movie.name}</td>
+            <tr key={movie.original_title}>
+              <td>{movie.original_title}</td>
               <td>{movie.date}</td>
+              <td>{movie.vote_average}/10</td>
+              <td>{movie.runtime}</td>
               <td>
                 <button onClick={() => deleteMovie(movie.id)}>Delete</button>
               </td>

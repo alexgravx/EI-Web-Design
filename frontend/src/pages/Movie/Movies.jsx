@@ -14,7 +14,7 @@ function Movies() {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/movies`)
       .then((response) => {
-        setMovies(response.data.movies);
+        setMovies(response.data.movies.slice(0, 1000));
       })
       .catch((error) => {
         setMoviesLoadingError('An error occured while fetching movies.');
@@ -29,7 +29,6 @@ function Movies() {
 
   return (
     <div className="Movies-container">
-      <h1>You can add a movie in the database here.</h1>
       <AddMovieForm onSuccessfulMovieCreation={fetchMovies} />
       <MovieTable movies={movies} onSuccessfulMovieDeletion={fetchMovies} />
       {moviesLoadingError !== null && (

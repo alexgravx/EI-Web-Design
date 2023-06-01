@@ -1,14 +1,24 @@
 .add-movie-form > :not(:last-child) {
   margin-right: 10px;
+  left: 50%;
+  position: relative;
 }
 
 .add-movie-input {
   padding: 5px;
+  border-radius: 5px;
 }
 
 .add-movie-button {
   cursor: pointer;
   padding: 5px;
+  position: relative;
+  left :50%;
+  background-color: rgba(125, 123, 123, 0.99);
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 .movie-creation-success {
