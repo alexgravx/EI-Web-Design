@@ -5,19 +5,19 @@ import Movie from '../entities/movies.js';
 function transform(data) {
   var json = JSON.parse(data);
   var result = [];
-  json.map((film) =>
+  for (const i in json) {
     result.push({
-      original_title: film.original_title,
-      popularity: film.popularity,
-      date: film.date,
-      runtime: film.runtime,
-      adult: film.adult,
-      overview: film.overview,
-      poster_path: film.poster_path,
-      vote_count: film.vote_count,
-      vote_average: film.overview,
-    })
-  );
+      original_title: json[i].original_title,
+      popularity: json[i].popularity,
+      date: json[i].release_date,
+      runtime: json[i].runtime,
+      adult: json[i].adult,
+      overview: json[i].overview,
+      poster_path: json[i].poster_path,
+      vote_count: json[i].vote_count,
+      vote_average: json[i].vote_average,
+    });
+  }
 
   return result;
 }
@@ -27,10 +27,15 @@ async function extract(path) {
   try {
     const files = await readdir(path);
     for (const file of files) {
-      const filePath = new URL(file, import.meta.url);
+      console.log(file);
+      const filePath = new URL(
+        file,
+        'file:///Users/alexandregravereaux/Desktop/Fichiers/Perso/Programmation/Git/popmovie/backend/bdd_dumps/'
+      );
       const contents = await readFile(filePath, { encoding: 'utf8' });
       var data_result = transform(contents);
-      result.concat(data_result);
+      result = result.concat(data_result);
+      console.log(result.length);
     }
   } catch (err) {
     console.error(err);
@@ -42,6 +47,7 @@ async function extract(path) {
 function insert_movie(dict) {
   const movieRepository = appDataSource.getRepository(Movie);
   const newMovie = movieRepository.create(dict);
+  console.log(newMovie);
 
   movieRepository
     .insert(newMovie)
@@ -58,8 +64,9 @@ function insert_movie(dict) {
     });
 }
 
-function insert_movies(path) {
-  var list_films = extract(path);
+async function insert_movies(path) {
+  var list_films = await extract(path);
+  console.log('here');
   for (const i in list_films) {
     insert_movie(list_films[i]);
   }

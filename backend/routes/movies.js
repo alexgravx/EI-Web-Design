@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
 });
 
 router.post('/dump_bdd', function (req, res) {
-  insert_movies('./backend/bdd_dumps');
+  insert_movies('./bdd_dumps/');
   res.status(201);
 });
 

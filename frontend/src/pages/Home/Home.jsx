@@ -1,47 +1,43 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Movie from '../../components/Movie/movie.jsx';
-import logo from './logo2.png';
 import './Home.css';
 
 function useFetchMovies() {
-  const [movies, SetMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
+  const fetchUsers = () => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/movies`)
+      .then((response) => {
+        setMovies(response.data.movies);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  // fetch users on component mount
   useEffect(() => {
-    const url =
-      'https://api.themoviedb.org/3/movie/popular?language=fr-FR&page=1';
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjlmNjAwMzY4MzMzODNkNGIwYjNhNzJiODA3MzdjNCIsInN1YiI6IjY0NzA5YmE4YzVhZGE1MDBkZWU2ZTMxMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Em7Y9fSW94J91rbuKFjDWxmpWaQzTitxRKNdQ5Lh2Eo',
-      },
-    };
-    fetch(url, options)
-      .then((res) => res.json())
-      .then((json) => SetMovies(json.results))
-      .catch((err) => console.error('error:' + err));
+    fetchUsers();
   }, []);
 
   return movies;
 }
 
 function Home() {
-  const [movieName, setMovieName] = useState('');
-  const movies = useFetchMovies();
+  // const [movieName, setMovieName] = useState(''); Pour la barre de recherche
+  var movies = useFetchMovies();
+  movies = movies.slice(0, 15000);
   const [filteredMovies, setFilteredMovies] = useState([]);
   console.log(movies);
 
   useEffect(() => {
     const filterMovies = () => {
-      const filtered = movies.filter((film) =>
-        film.title.toLowerCase().includes(movieName.toLowerCase())
-      );
+      const filtered = movies.filter((film) => film.adult === true);
       setFilteredMovies(filtered);
     };
 
     filterMovies();
-  }, [movieName, movies]);
+  }, [movies]);
 
   return (
     <div className="App">
