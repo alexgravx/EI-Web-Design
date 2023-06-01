@@ -13,17 +13,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.page_container{
-  background-color: #101010;
-}
 
 .populaire{
   margin-top: 30px;
-  padding-left: 30px;
+  padding-left: 20px;
   margin-bottom: 0px;
   background-color: #101010;
   text-align: left;
   color: #fff;
+  font-size: 30px;
   font-weight: bold;
   
 }
