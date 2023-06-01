@@ -46,19 +46,11 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="WebsiteName">Welcome on PopMovie</h1>
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="WebsiteName"> PopMovie</h1>
       </header>
-      <body>
-        <input
-          className="input"
-          value={movieName}
-          placeholder="Film à chercher"
-          onChange={(event) => setMovieName(event.target.value)}
-        ></input>
+      <div className="page_container">
         <Movie movies={filteredMovies} />
-      </body>
+      </div>
     </div>
   );
 }
