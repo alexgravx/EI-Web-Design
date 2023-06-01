@@ -1,14 +1,13 @@
 .films {
-  padding: 10px;
   background-color: #101010;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  font-size: calc(10px + 2vmin);
 }
 
 .movies-posters {
-  width: 150px;
+  width: 12%;
+  min-width: 170px;
   margin-top: 2rem;
   font-size: 15px;
   font-family: 'Helvetica neue', monospace;
@@ -30,11 +29,13 @@
   position: fixed;
   top: 50%;
   left: 50%;
+  height: 450px;
+  width: 300px;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.99);
+  background-color: rgba(0, 0, 0, 1);
   padding: 75px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.99);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -43,7 +44,7 @@
 }
 
 .popup h2 {
-  font-size: 24px;
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
@@ -101,6 +102,9 @@
   width: 20px;
   height: 2px;
   background-color: #fff;
+
+.popup.active .like-button, .popup.active .dislike-button {
+  display: block; /*Show the like and dislike buttons when the popup is active */
 }
 
 .button-close::before {

@@ -32,8 +32,8 @@ function Movie({ movies }) {
             className="movie-image"
             alt="poster"
             src={`https://image.tmdb.org/t/p/w1280${film.poster_path}`}
-            height="150"
-            width="100"
+            height="225"
+            width="150"
             onClick={() => openPopup(film)}
           />
           {currentMovie && currentMovie.id === film.id && (

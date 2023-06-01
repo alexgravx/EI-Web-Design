@@ -2,6 +2,19 @@ import { readdir, readFile } from 'node:fs/promises';
 import { appDataSource } from '../datasource.js';
 import Movie from '../entities/movies.js';
 
+function concat_genre(genre_list) {
+  var string_result = '';
+  for (const i in genre_list) {
+    if (genre_list[i].name === 'Science Fiction') {
+      string_result = string_result.concat('Science-Fiction', ' ');
+    } else {
+      string_result = string_result.concat(genre_list[i].name, ' ');
+    }
+  }
+
+  return string_result;
+}
+
 function transform(data) {
   var json = JSON.parse(data);
   var result = [];
@@ -14,8 +27,10 @@ function transform(data) {
       adult: json[i].adult,
       overview: json[i].overview,
       poster_path: json[i].poster_path,
+      backdrop_path: json[i].backdrop_path,
       vote_count: json[i].vote_count,
       vote_average: json[i].vote_average,
+      genre: concat_genre(json[i].genres),
     });
   }
 
@@ -27,7 +42,6 @@ async function extract(path) {
   try {
     const files = await readdir(path);
     for (const file of files) {
-      console.log(file);
       const filePath = new URL(
         file,
         'file:///Users/alexandregravereaux/Desktop/Fichiers/Perso/Programmation/Git/popmovie/backend/bdd_dumps/'
@@ -47,7 +61,6 @@ async function extract(path) {
 function insert_movie(dict) {
   const movieRepository = appDataSource.getRepository(Movie);
   const newMovie = movieRepository.create(dict);
-  console.log(newMovie);
 
   movieRepository
     .insert(newMovie)
@@ -66,7 +79,6 @@ function insert_movie(dict) {
 
 async function insert_movies(path) {
   var list_films = await extract(path);
-  console.log('here');
   for (const i in list_films) {
     insert_movie(list_films[i]);
   }

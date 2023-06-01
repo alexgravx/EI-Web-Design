@@ -113,9 +113,7 @@ function Search() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="WebsiteName">Movie Search</h1>
-      </header>
+      <header className="search-header"></header>
       <div className="body">
         <input
           className="input"
