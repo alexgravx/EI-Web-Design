@@ -29,8 +29,8 @@ function Movie({ movies }) {
             className="movie-image"
             alt="poster"
             src={`https://image.tmdb.org/t/p/w1280${film.poster_path}`}
-            height="150"
-            width="100"
+            height="225"
+            width="150"
             onClick={() => openPopup(film)}
           />
           {currentMovie && currentMovie.id === film.id && (
@@ -42,7 +42,6 @@ function Movie({ movies }) {
                   alt="poster"
                   src={`https://image.tmdb.org/t/p/w1280${currentMovie.poster_path}`}
                 />
-                <button onClick={closePopup}>Close</button>
                 <div className="popup-text">
                   <h2> Note = {currentMovie.vote_average}/10</h2>
                 </div>
@@ -54,7 +53,7 @@ function Movie({ movies }) {
                     Dislike
                   </button>
                 </div>
-                <p className="like-message">Movie liked or disliked!</p>
+                <button onClick={closePopup}>Close</button>
               </div>
             </div>
           )}
