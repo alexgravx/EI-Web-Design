@@ -20,6 +20,15 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${navbarTransparent ? 'transparent' : ''}`}>
       <ul className="nav-list">
+        <li className="logoNav">
+          <img src='https://st2.depositphotos.com/4819429/9866/v/950/depositphotos_98663476-stock-illustration-popcorn-movie-logo-design-popcorn.jpg'
+          height="50px"
+          width="50px" >
+          </img>
+        </li>
+        <li className="nav-item-Popmovie">
+          <p>PopMovie</p>
+        </li>
         <li className="nav-item">
           <a href="/">Home</a>
         </li>
@@ -31,9 +40,6 @@ const Navbar = () => {
         </li>
         <li className="nav-item">
           <a href="about">About</a>
-        </li>
-        <li className="nav-item-Popmovie">
-          <p>PopMovie</p>
         </li>
       </ul>
     </nav>
