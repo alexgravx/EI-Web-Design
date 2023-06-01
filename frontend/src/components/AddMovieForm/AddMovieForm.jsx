@@ -58,6 +58,14 @@ function AddMovieForm({ onSuccessfulMovieCreation }) {
             setFormValues({ ...formValues, date: event.target.value })
           }
         />
+        <input
+          className="add-movie-input"
+          placeholder="Durée en min"
+          value={formValues.runtime}
+          onChange={(event) =>
+            setFormValues({ ...formValues, runtime: event.target.value })
+          }
+        />
         <button className="add-movie-button" type="submit">
           Add movie
         </button>

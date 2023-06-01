@@ -2,15 +2,6 @@
   text-align: center;
 }
 
-.WebsiteName {
-  color: white;
-}
-
-.WebsiteName:hover {
-  color: royalblue;
-  font-size: 70px;
-}
-
 .App-logo {
   padding: 0 150px 0 150px;
   height: 25vmin;
@@ -74,12 +65,12 @@
   cursor: pointer;
 }
 
-.popup {
+.spopup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(112, 236, 147);
+  background-color: rgba(0, 0, 0, 3);
   color: #000000;
   width: 700px;
   padding: 80px;
@@ -88,11 +79,11 @@
   text-align: center;
 }
 
-.popup h2 {
+.spopup h2 {
   margin-top: 0;
 }
 
-.popup .close-button {
+.spopup .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -103,14 +94,14 @@
   cursor: pointer;
 }
 
-.popup .title-popup {
+.spopup .title-popup {
   position: absolute;
   top: 10px;
   left: 33%;
   color: rgb(8, 19, 61);
 }
 
-.popup .search-button {
+.spopup .search-button {
   position: absolute;
   bottom: 20px;
   left: 50%;

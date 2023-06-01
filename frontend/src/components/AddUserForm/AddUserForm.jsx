@@ -4,8 +4,8 @@ import './AddUserForm.css';
 
 const DEFAULT_FORM_VALUES = {
   email: '',
-  firstname: '',
-  lastname: '',
+  nickname: '',
+  name: '',
 };
 
 function AddUserForm({ onSuccessfulUserCreation }) {
@@ -46,7 +46,7 @@ function AddUserForm({ onSuccessfulUserCreation }) {
         <input
           className="add-user-input"
           required
-          type="email"
+          type="Email"
           placeholder="Email"
           value={formValues.email}
           onChange={(event) =>
@@ -55,18 +55,18 @@ function AddUserForm({ onSuccessfulUserCreation }) {
         />
         <input
           className="add-user-input"
-          placeholder="First name"
-          value={formValues.firstname}
+          placeholder="Nickname"
+          value={formValues.nickname}
           onChange={(event) =>
-            setFormValues({ ...formValues, firstname: event.target.value })
+            setFormValues({ ...formValues, nickname: event.target.value })
           }
         />
         <input
           className="add-user-input"
-          placeholder="Last name"
-          value={formValues.lastname}
+          placeholder="Name"
+          value={formValues.name}
           onChange={(event) =>
-            setFormValues({ ...formValues, lastname: event.target.value })
+            setFormValues({ ...formValues, name: event.target.value })
           }
         />
         <button className="add-user-button" type="submit">

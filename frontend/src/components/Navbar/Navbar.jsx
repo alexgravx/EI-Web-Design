@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
+import logo1 from './thumbnail_IMG-0400.png'
 
 const Navbar = () => {
   const [navbarTransparent, setNavbarTransparent] = useState(true);
@@ -23,7 +24,7 @@ const Navbar = () => {
         <li className="logoNav">
           <img
             alt="logonav"
-            src="https://st2.depositphotos.com/4819429/9866/v/950/depositphotos_98663476-stock-illustration-popcorn-movie-logo-design-popcorn.jpg"
+            src={logo1}
             height="40px"
             width="40px"
           ></img>

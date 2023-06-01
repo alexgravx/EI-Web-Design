@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+
 import './Movie.css';
 
 function Movie({ movies }) {
@@ -36,25 +39,24 @@ function Movie({ movies }) {
           {currentMovie && currentMovie.id === film.id && (
             <div className={`popup ${currentMovie && 'active'}`}>
               <div className="popup-content">
-                <h2>{currentMovie.title}</h2>
+                <h2>{currentMovie.original_title}</h2>
                 <img
                   className="popup-image"
                   alt="poster"
                   src={`https://image.tmdb.org/t/p/w1280${currentMovie.poster_path}`}
                 />
-                <button onClick={closePopup}>Close</button>
                 <div className="popup-text">
-                  <h2> Note = {currentMovie.vote_average}/10</h2>
+                  <h2>{currentMovie.vote_average}/10</h2>
                 </div>
                 <div className="button-container">
                   <button className="like-button" onClick={handleLike}>
-                    Like
+                    <FontAwesomeIcon icon={faThumbsUp} />
                   </button>
                   <button className="dislike-button" onClick={handleDislike}>
-                    Dislike
+                    <FontAwesomeIcon icon={faThumbsDown} />
                   </button>
                 </div>
-                <p className="like-message">Movie liked or disliked!</p>
+                <button className="button-close" onClick={closePopup}></button>
               </div>
             </div>
           )}

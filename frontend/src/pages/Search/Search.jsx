@@ -131,7 +131,7 @@ function Search() {
 
         {/* Ouverture du popup */}
         {showPopup && (
-          <div className="popup">
+          <div className="spopup">
             {/* Bouton pour fermer le pop-up */}
             <button className="close-button" onClick={togglePopup}>
               X
