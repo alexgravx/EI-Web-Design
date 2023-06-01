@@ -39,7 +39,7 @@ const Navbar = () => {
           <a href="users">Users</a>
         </li>
         <li className="nav-item">
-          <a href="addmovies">Add Movies</a>
+          <a href="movies">Movies</a>
         </li>
       </ul>
     </nav>
