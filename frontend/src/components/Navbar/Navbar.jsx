@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
-import logo1 from './thumbnail_IMG-0400.png'
+import logo1 from './thumbnail_IMG-0400.png';
 
 const Navbar = () => {
   const [navbarTransparent, setNavbarTransparent] = useState(true);
@@ -22,12 +22,7 @@ const Navbar = () => {
     <nav className={`navbar ${navbarTransparent ? 'transparent' : ''}`}>
       <ul className="nav-list">
         <li className="logoNav">
-          <img
-            alt="logonav"
-            src={logo1}
-            height="40px"
-            width="40px"
-          ></img>
+          <img alt="logonav" src={logo1} height="40px" width="40px"></img>
         </li>
         <li className="nav-item-Popmovie">
           <p>PopMovie</p>
@@ -37,9 +32,6 @@ const Navbar = () => {
         </li>
         <li className="nav-item">
           <a href="search">Search</a>
-        </li>
-        <li className="nav-item">
-          <a href="users">Users</a>
         </li>
         <li className="nav-item">
           <a href="movies">Movies</a>
