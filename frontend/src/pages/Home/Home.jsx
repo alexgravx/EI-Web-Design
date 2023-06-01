@@ -27,13 +27,13 @@ function useFetchMovies() {
 function Home() {
   // const [movieName, setMovieName] = useState(''); Pour la barre de recherche
   var movies = useFetchMovies();
-  movies = movies.slice(0, 15000);
+  movies = movies.slice(0, 1000);
   const [filteredMovies, setFilteredMovies] = useState([]);
   console.log(movies);
 
   useEffect(() => {
     const filterMovies = () => {
-      const filtered = movies.filter((film) => film.adult === true);
+      const filtered = movies.filter((film) => film.adult === false);
       setFilteredMovies(filtered);
     };
 
@@ -46,7 +46,7 @@ function Home() {
         <Banner movies={filteredMovies} />
       </header>
       <div className="page_container">
-        <p className='popu'>Films Populaires</p>
+        <p className="populaire">Films Populaires</p>
         <Movie movies={filteredMovies} />
       </div>
     </div>

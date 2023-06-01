@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import Movie from '../../components/Movie/movie.jsx';
+import axios from 'axios';
+import Movie from '../../components/Movie/Movie.jsx';
 import './Search.css';
 
-function useFetchMovies2() {
+function useFetchMovies() {
   const [movies, setMovies] = useState([]);
 
+  const fetchUsers = () => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/movies`)
+      .then((response) => {
+        setMovies(response.data.movies);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  // fetch users on component mount
   useEffect(() => {
-    const url = 'https://api.themoviedb.org/3/movie/popular?language=fr-FR&page=1';
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjlmNjAwMzY4MzMzODNkNGIwYjNhNzJiODA3MzdjNCIsInN1YiI6IjY0NzA5YmE4YzVhZGE1MDBkZWU2ZTMxMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Em7Y9fSW94J91rbuKFjDWxmpWaQzTitxRKNdQ5Lh2Eo',
-      },
-    };
-    fetch(url, options)
-      .then((res) => res.json())
-      .then((json) => setMovies(json.results))
-      .catch((err) => console.error('error:' + err));
+    fetchUsers();
   }, []);
 
   return movies;
@@ -26,7 +25,8 @@ function useFetchMovies2() {
 
 function Search() {
   const [movieName, setMovieName] = useState('');
-  const movies = useFetchMovies2();
+  var movies = useFetchMovies();
+  movies = movies.slice(0, 1000);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [filters, setFilters] = useState({});
   const [showPopup, setShowPopup] = useState(false);
@@ -41,7 +41,7 @@ function Search() {
   useEffect(() => {
     const filterMovies = () => {
       const filtered = movies.filter((film) =>
-        film.title.toLowerCase().includes(movieName.toLowerCase())
+        film.original_title.toLowerCase().includes(movieName.toLowerCase())
       );
       setFilteredMovies(filtered);
     };
@@ -53,6 +53,7 @@ function Search() {
     setFilters((prevFilters) => {
       if (value === null) {
         const { [filterName]: removedFilter, ...restFilters } = prevFilters;
+
         return restFilters;
       } else {
         return {
@@ -83,8 +84,8 @@ function Search() {
 
       for (const filter in filters) {
         if (filters.hasOwnProperty(filter)) {
-          filtered = filtered.filter((movie) =>
-            movie[filter] === filters[filter]
+          filtered = filtered.filter(
+            (movie) => movie[filter] === filters[filter]
           );
         }
       }
@@ -150,8 +151,7 @@ function Search() {
                     checked={
                       resetCustomSearch
                         ? false
-                        : filters.genre &&
-                          filters.genre.includes('action')
+                        : filters.genre && filters.genre.includes('action')
                     }
                     onChange={(e) => toggleCheckbox('genre', 'action')}
                   />
@@ -163,8 +163,7 @@ function Search() {
                     checked={
                       resetCustomSearch
                         ? false
-                        : filters.genre &&
-                          filters.genre.includes('comedy')
+                        : filters.genre && filters.genre.includes('comedy')
                     }
                     onChange={(e) => toggleCheckbox('genre', 'comedy')}
                   />
@@ -176,8 +175,7 @@ function Search() {
                     checked={
                       resetCustomSearch
                         ? false
-                        : filters.genre &&
-                          filters.genre.includes('fantasy')
+                        : filters.genre && filters.genre.includes('fantasy')
                     }
                     onChange={(e) => toggleCheckbox('genre', 'fantasy')}
                   />
@@ -192,9 +190,7 @@ function Search() {
                         : filters.genre &&
                           filters.genre.includes('science-fiction')
                     }
-                    onChange={(e) =>
-                      toggleCheckbox('genre', 'science-fiction')
-                    }
+                    onChange={(e) => toggleCheckbox('genre', 'science-fiction')}
                   />
                   Science Fiction
                 </label>
@@ -228,8 +224,7 @@ function Search() {
                     checked={
                       resetCustomSearch
                         ? false
-                        : filters.genre &&
-                          filters.genre.includes('musical')
+                        : filters.genre && filters.genre.includes('musical')
                     }
                     onChange={(e) => toggleCheckbox('genre', 'musical')}
                   />
@@ -244,8 +239,7 @@ function Search() {
                     checked={
                       resetCustomSearch
                         ? false
-                        : filters.public &&
-                          filters.public.includes('adult')
+                        : filters.public && filters.public.includes('adult')
                     }
                     onChange={(e) => toggleCheckbox('public', 'adult')}
                   />
@@ -257,8 +251,7 @@ function Search() {
                     checked={
                       resetCustomSearch
                         ? false
-                        : filters.public &&
-                          filters.public.includes('family')
+                        : filters.public && filters.public.includes('family')
                     }
                     onChange={(e) => toggleCheckbox('public', 'family')}
                   />
