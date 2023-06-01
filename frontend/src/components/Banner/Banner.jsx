@@ -1,28 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Banner.css'; // Import the CSS file for styling
 
 const Banner = () => {
-  const images = ['https://image.tmdb.org/t/p/w1280/jAMVKvqxdNbUY2YQWhCclYI6coP.jpg', 'https://image.tmdb.org/t/p/w1280/jAMVKvqxdNbUY2YQWhCclYI6coP.jpg', 'https://image.tmdb.org/t/p/w1280/jAMVKvqxdNbUY2YQWhCclYI6coP.jpg']; // Add your image paths here
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const movies = [
+    { title: 'Movie 1', poster_path: 'https://image.tmdb.org/t/p/w1280/5lc6nQc0VhWFYFbNv016xze8Jvy.jpg' },
+    { title: 'Movie 2', poster_path: 'https://image.tmdb.org/t/p/w1280/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg' },
+    { title: 'Movie 3', poster_path: 'https://image.tmdb.org/t/p/w1280/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg' },
+  ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Adjust the interval duration as per your preference
+  const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+  const goToPreviousMovie = () => {
+    setCurrentMovieIndex((prevIndex) => (prevIndex === 0 ? movies.length - 1 : prevIndex - 1));
+  };
+
+  const goToNextMovie = () => {
+    setCurrentMovieIndex((prevIndex) => (prevIndex === movies.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const currentMovie = movies[currentMovieIndex];
 
   return (
     <div className="banner">
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image}
-          className={`banner-image ${index === currentImageIndex ? 'active' : ''}`}
-          alt={`Image ${index + 1}`}
-        />
-      ))}
+      <div className="carousel">
+        <button className="carousel-arrow left-arrow" onClick={goToPreviousMovie}>
+          &lt;
+        </button>
+        <img src={currentMovie.poster_path} alt={currentMovie.title} className="carousel-image" />
+        <button className="carousel-arrow right-arrow" onClick={goToNextMovie}>
+          &gt;
+        </button>
+      </div>
     </div>
   );
 };
