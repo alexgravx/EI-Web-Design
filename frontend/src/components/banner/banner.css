@@ -17,40 +17,27 @@
     left: 0%; /* Display the active image */
   }
   
-  .left-arrow,
-  .right-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    opacity: 0.6;
-    cursor: pointer;
-  }
-  
-  .left-arrow {
-    left: 10px;
-  }
-  
-  .right-arrow {
-    right: 10px;
-  }
-  
-  .left-arrow:before,
-  .right-arrow:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-style: solid;
-    border-width: 6px 0 6px 10px;
-    border-color: transparent transparent transparent #000;
-  }
-  
-  .right-arrow:before {
-    transform: translateY(-50%) rotate(180deg);
-    border-width: 6px 10px 6px 0;
-    border-color: transparent #000 transparent transparent;
-  }
-  
+.left-arrow {
+left: 10px;
+}
+
+.right-arrow {
+right: 10px;
+}
+
+.left-arrow:before,
+.right-arrow:before {
+content: '';
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+border-style: solid;
+border-width: 6px 0 6px 10px;
+border-color: transparent transparent transparent #000;
+}
+
+.right-arrow:before {
+transform: translateY(-50%) rotate(180deg);
+border-width: 6px 10px 6px 0;
+border-color: transparent #000 transparent transparent;
+}
