@@ -4,9 +4,9 @@
     left: 0;
     width: 100%;
     align-items: center;
-    background-color:rgba(0, 0, 0, 0.8)  ;
+    background-color:rgba(0, 0, 0, 10)  ;
     z-index: 100;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     transition: background-color 0.3s ease-in-out;
   }
@@ -24,7 +24,7 @@
   
   .nav-item {
     transition: transform 0.2s ease-in-out;
-    margin-left: 20px;
+    margin-left: 20px; 
   }
   .nav-item:hover {
     transform: scale(1.1);
@@ -41,4 +41,11 @@
     
     color: #ccc;
   }
-  
+  .nav-item-Popmovie {
+    color: #f94e4e;
+    font-weight: bold;
+    margin-left: 20px;}
+.logoNav{
+  margin-left: 20px;
+  align-items: center;
+}
