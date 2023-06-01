@@ -47,7 +47,6 @@ function Home() {
     <div className="App">
       <header className="App-header">
         <Banner />
-        <h1 className="WebsiteName"> PopMovie</h1>
       </header>
       <div className="page_container">
         <Movie movies={filteredMovies} />

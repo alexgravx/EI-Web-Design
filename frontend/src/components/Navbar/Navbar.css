@@ -24,7 +24,7 @@
   
   .nav-item {
     transition: transform 0.2s ease-in-out;
-    margin-left: 20px;
+    margin-left: 20px; 
   }
   .nav-item:hover {
     transform: scale(1.1);
@@ -41,4 +41,6 @@
     
     color: #ccc;
   }
-  
+  .nav-item {
+    color: #fff;
+    margin-right: 20px;}

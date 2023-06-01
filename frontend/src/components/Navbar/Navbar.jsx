@@ -32,6 +32,9 @@ const Navbar = () => {
         <li className="nav-item">
           <a href="about">About</a>
         </li>
+        <li className="nav-item-Popmovie">
+          <p>PopMovie</p>
+        </li>
       </ul>
     </nav>
   );
