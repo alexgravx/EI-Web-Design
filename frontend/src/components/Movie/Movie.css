@@ -170,29 +170,36 @@
   margin-right: 20px ;
   }
 
-  .liked-movies {
-    margin-top: 20px;
-  }
-  
+  .liked-movies,
+  .other-movies,
   .disliked-movies {
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .liked-movies h3,
+  .other-movies h3,
   .disliked-movies h3 {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
   }
   
-  .liked-movies ul,
-  .disliked-movies ul {
-    list-style-type: none;
-    padding: 0;
+  .liked-movies-posters,
+  .other-movies-posters,.disliked-movies-posters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
-  .liked-movies li,
-  .disliked-movies li {
-    margin-bottom: 5px;
+  .movies-posters {
+    margin: 10px;
   }
   
+  .movie-image {
+    cursor: pointer;
+  }
+  .separator {
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 18px;
+}
