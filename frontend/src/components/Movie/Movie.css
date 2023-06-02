@@ -127,11 +127,18 @@
   padding-right: 20px ;
 
   }
-.textvote{
+.textvote-good{
+  color:rgb(23, 124, 0);
   text-align: left;
   margin-left: 20px;
   font-style: italic;
+}
 
+.textvote-bad{
+  color: red;
+  text-align: left;
+  margin-left: 20px;
+  font-style: italic;
 }
 
 .button-close::after {

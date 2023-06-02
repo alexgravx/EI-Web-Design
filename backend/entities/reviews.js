@@ -8,9 +8,10 @@ const Review = new typeorm.EntitySchema({
       type: Number,
       generated: true,
     },
+    user_id: { type: Number },
     rating: { type: Number },
-    media_title: { type: String },
-    media_id: { type: Number },
+    movie_title: { type: String },
+    movie_id: { type: Number },
   },
 });
 
