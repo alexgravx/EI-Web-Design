@@ -29,7 +29,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  height: 450px;
+  min-height: 450px;
   width: 500px;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 1);
@@ -53,8 +53,6 @@
   height: 215px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-
-
   
 }
 .titlepop{
@@ -127,6 +125,7 @@
   padding-bottom: 20px;
   padding-left: 20px ;
   padding-right: 20px ;
+
   }
 .textvote{
   text-align: left;

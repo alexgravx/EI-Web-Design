@@ -49,6 +49,7 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
+        <link rel="shortcut icon" href="./favicon.ico" />
         <Banner movies={filteredMovies} />
       </header>
       <div className="page_container">

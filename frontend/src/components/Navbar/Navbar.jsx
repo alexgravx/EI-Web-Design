@@ -36,6 +36,10 @@ const Navbar = () => {
         <li className="nav-item">
           <a href="movies">Movies</a>
         </li>
+        <li className="user">
+          <a href="user">User</a>
+           <img alt="logouser" src='https://www.logolynx.com/images/logolynx/4b/4beebce89d681837ba2f4105ce43afac.png' height="40px" width="40px"></img>
+        </li>
       </ul>
     </nav>
   );

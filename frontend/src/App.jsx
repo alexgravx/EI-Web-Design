@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import Movies from './pages/Movie/Movies';
 import Search from './pages/Search/Search';
+import User from './pages/User/User';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="search" element={<Search />} />
         <Route path="movies" element={<Movies />} />
+        <Route path="user" element={<User />} />
       </Routes>
     </div>
   );
