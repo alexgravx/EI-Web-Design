@@ -29,7 +29,6 @@ function Home() {
   var movies = useFetchMovies();
   movies = movies.slice(0, 2500);
   const [filteredMovies, setFilteredMovies] = useState([]);
-  console.log(movies);
 
   useEffect(() => {
     const filterMovies = () => {
@@ -37,7 +36,9 @@ function Home() {
         (film) =>
           film.adult === false &&
           film.poster_path != null &&
-          film.backdrop_path != null
+          film.backdrop_path != null &&
+          film.overview != null &&
+          film.original_title != null
       );
       setFilteredMovies(filtered);
     };

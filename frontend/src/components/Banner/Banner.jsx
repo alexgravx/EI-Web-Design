@@ -1,40 +1,54 @@
 import React, { useState } from 'react';
 import './Banner.css'; // Import the CSS file for styling
 
-const Banner = () => {
-  const movies = [
-    {
-      title: 'Movie 1',
-      poster_path:
-        'https://image.tmdb.org/t/p/w1280/5lc6nQc0VhWFYFbNv016xze8Jvy.jpg',
-    },
-    {
-      title: 'Movie 2',
-      poster_path:
-        'https://image.tmdb.org/t/p/w1280/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg',
-    },
-    {
-      title: 'Movie 3',
-      poster_path:
-        'https://image.tmdb.org/t/p/w1280/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg',
-    },
-  ];
+const getPopularMovieBackdrop = (movies) => {
+  // Créer une copie de l'array de films pour éviter de modifier l'original
+  const moviesCopy = [...movies];
 
+  // Utiliser une boucle pour trier les films par popularité décroissante
+  for (let i = 0; i < moviesCopy.length - 1; i++) {
+    for (let j = i + 1; j < moviesCopy.length; j++) {
+      if (moviesCopy[j].popularity > moviesCopy[i].popularity) {
+        // Échanger les positions des films si le film j est plus populaire que le film i
+        [moviesCopy[i], moviesCopy[j]] = [moviesCopy[j], moviesCopy[i]];
+      }
+    }
+  }
+
+  // Obtenir les 5 premiers films de la liste triée
+  const popularMovies = moviesCopy.slice(0, 5);
+
+  // Obtenir les backdrop_path des films populaires
+  const popularMovieBackdrops = popularMovies.map(
+    (movie) => movie.backdrop_path
+  );
+  const popularMovietitle = popularMovies.map((movie) => movie.original_title);
+  const popularMoviesOV = popularMovies.map((movie) => movie.overview);
+
+  return [popularMovieBackdrops, popularMovietitle, popularMoviesOV];
+};
+
+const Banner = ({ movies }) => {
+  const backdropMovies = getPopularMovieBackdrop(movies)[0];
+  const titleMovies = getPopularMovieBackdrop(movies)[1];
+  const OVMovies = getPopularMovieBackdrop(movies)[2];
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
   const goToPreviousMovie = () => {
     setCurrentMovieIndex((prevIndex) =>
-      prevIndex === 0 ? movies.length - 1 : prevIndex - 1
+      prevIndex === 0 ? backdropMovies.length - 1 : prevIndex - 1
     );
   };
 
   const goToNextMovie = () => {
     setCurrentMovieIndex((prevIndex) =>
-      prevIndex === movies.length - 1 ? 0 : prevIndex + 1
+      prevIndex === backdropMovies.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const currentMovie = movies[currentMovieIndex];
+  const currentMovie = backdropMovies[currentMovieIndex];
+  const currentMoviet = titleMovies[currentMovieIndex];
+  const currentMovieOV = OVMovies[currentMovieIndex];
 
   return (
     <div className="banner">
@@ -46,10 +60,14 @@ const Banner = () => {
           &lt;
         </button>
         <img
-          src={currentMovie.poster_path}
-          alt={currentMovie.title}
+          src={`https://image.tmdb.org/t/p/w1280${currentMovie}`}
+          alt="banner"
           className="carousel-image"
         />
+        <h1 className="titlemovie">
+          {currentMoviet.split(' ').slice(0, 4).join(' ')}
+        </h1>
+        <h2 className="OVmovie">{currentMovieOV.slice(0, 100)}... </h2>
         <button className="carousel-arrow right-arrow" onClick={goToNextMovie}>
           &gt;
         </button>
