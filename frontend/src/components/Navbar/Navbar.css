@@ -21,7 +21,24 @@
     margin: 0;
     padding: 0;
   }
-  
+  .user{
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    margin-right: 20px;
+    position: absolute;
+    left: 91%;
+    align-items: center;
+  }
+
+  .user a {
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      margin-right: 20px ;}
+  .user a:hover {
+        color: #ccc;
+      }
   .nav-item {
     transition: transform 0.2s ease-in-out;
     margin-left: 20px; 

@@ -65,9 +65,9 @@ const Banner = ({ movies }) => {
           className="carousel-image"
         />
         <h1 className="titlemovie">
-          {currentMoviet.split(' ').slice(0, 4).join(' ')}
+          {currentMoviet?.split(' ').slice(0, 4).join(' ')}
         </h1>
-        <h2 className="OVmovie">{currentMovieOV.slice(0, 100)}... </h2>
+        <h2 className="OVmovie">{currentMovieOV?.slice(0, 100)}... </h2>
         <button className="carousel-arrow right-arrow" onClick={goToNextMovie}>
           &gt;
         </button>

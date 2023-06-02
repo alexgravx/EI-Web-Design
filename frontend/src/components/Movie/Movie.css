@@ -29,7 +29,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  height: 450px;
+  min-height: 450px;
   width: 500px;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 1);
@@ -53,8 +53,6 @@
   height: 215px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-
-
   
 }
 .titlepop{
@@ -127,6 +125,7 @@
   padding-bottom: 20px;
   padding-left: 20px ;
   padding-right: 20px ;
+
   }
 .textvote{
   text-align: left;
@@ -170,3 +169,30 @@
   justify-content: space-between;
   margin-right: 20px ;
   }
+
+  .liked-movies {
+    margin-top: 20px;
+  }
+  
+  .disliked-movies {
+    margin-top: 20px;
+  }
+  
+  .liked-movies h3,
+  .disliked-movies h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .liked-movies ul,
+  .disliked-movies ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .liked-movies li,
+  .disliked-movies li {
+    margin-bottom: 5px;
+  }
+  
