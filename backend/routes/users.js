@@ -1,6 +1,7 @@
 import express from 'express';
 import { appDataSource } from '../datasource.js';
 import User from '../entities/user.js';
+import insert_users from '../utils/insert_bdd_users.js';
 
 const router = express.Router();
 
@@ -13,12 +14,18 @@ router.get('/', function (req, res) {
     });
 });
 
+router.post('/dump_bdd_users', function (req, res) {
+  insert_users('./bdd_dumps_users/');
+  res.status(201);
+});
+
 router.post('/new', function (req, res) {
   const userRepository = appDataSource.getRepository(User);
   const newUser = userRepository.create({
-    email: req.body.email,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
+    nickname: req.body.nickname,
+    birthday: req.body.birthday,
+    gender: req.body.gender,
+    bio: req.body.bio,
   });
 
   userRepository

@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 migrations
-bdd_dumps
+bdd_dumps_movies
+bdd_dumps_users
 
 # local env files
 .env

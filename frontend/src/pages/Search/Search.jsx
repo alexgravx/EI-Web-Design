@@ -3,6 +3,10 @@ import axios from 'axios';
 import Movie from '../../components/Movie/Movie.jsx';
 import './Search.css';
 
+function get_genres(string_genre) {
+  return string_genre.split(' ');
+}
+
 function useFetchMovies() {
   const [movies, setMovies] = useState([]);
 

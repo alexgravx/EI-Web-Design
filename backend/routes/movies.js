@@ -1,7 +1,7 @@
 import express from 'express';
 import { appDataSource } from '../datasource.js';
 import Movie from '../entities/movies.js';
-import insert_movies from '../utils/insert_bdd.js';
+import insert_movies from '../utils/insert_bdd_movies.js';
 
 const router = express.Router();
 
@@ -14,16 +14,25 @@ router.get('/', function (req, res) {
     });
 });
 
-router.post('/dump_bdd', function (req, res) {
-  insert_movies('./bdd_dumps/');
+router.post('/dump_bdd_movies', function (req, res) {
+  insert_movies('./bdd_dumps_movies/');
   res.status(201);
 });
 
 router.post('/new', function (req, res) {
   const movieRepository = appDataSource.getRepository(Movie);
   const newMovie = movieRepository.create({
-    name: req.body.name,
+    original_title: req.body.name,
+    popularity: null,
     date: req.body.date,
+    runtime: req.body.runtime,
+    adult: null,
+    overview: null,
+    poster_path: null,
+    backdrop_path: null,
+    vote_count: null,
+    vote_average: null,
+    genre: null,
   });
 
   movieRepository

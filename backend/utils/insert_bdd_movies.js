@@ -44,7 +44,7 @@ async function extract(path) {
     for (const file of files) {
       const filePath = new URL(
         file,
-        'file:///Users/alexandregravereaux/Desktop/Fichiers/Perso/Programmation/Git/popmovie/backend/bdd_dumps/'
+        'file:///Users/alexandregravereaux/Desktop/Fichiers/Perso/Programmation/Git/popmovie/backend/bdd_dumps_movies/'
       );
       const contents = await readFile(filePath, { encoding: 'utf8' });
       var data_result = transform(contents);
@@ -70,7 +70,7 @@ function insert_movie(dict) {
     .catch(function (error) {
       console.error(error);
       if (error.code === '23505') {
-        console.log(`Movie "${newMovie.name}" already exists`);
+        console.log(`Movie "${newMovie.original_title}" already exists`);
       } else {
         console.log('Error while adding the movie');
       }
