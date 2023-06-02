@@ -169,3 +169,30 @@
   justify-content: space-between;
   margin-right: 20px ;
   }
+
+  .liked-movies {
+    margin-top: 20px;
+  }
+  
+  .disliked-movies {
+    margin-top: 20px;
+  }
+  
+  .liked-movies h3,
+  .disliked-movies h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .liked-movies ul,
+  .disliked-movies ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .liked-movies li,
+  .disliked-movies li {
+    margin-bottom: 5px;
+  }
+  
