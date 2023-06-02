@@ -5,6 +5,7 @@ import './AddMovieForm.css';
 const DEFAULT_FORM_VALUES = {
   name: '',
   date: '',
+  runtime: '',
 };
 
 function AddMovieForm({ onSuccessfulMovieCreation }) {

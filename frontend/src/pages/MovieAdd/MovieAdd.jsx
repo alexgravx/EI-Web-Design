@@ -1,4 +1,4 @@
-import './Movies.css';
+import './MovieAdd.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddMovieForm from '../../components/AddMovieForm/AddMovieForm';
@@ -14,7 +14,7 @@ function Movies() {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/movies`)
       .then((response) => {
-        setMovies(response.data.movies.slice(0, 1000));
+        setMovies(response.data.movies.reverse().slice(0, 1000));
       })
       .catch((error) => {
         setMoviesLoadingError('An error occured while fetching movies.');

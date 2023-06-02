@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
-import Movies from './pages/Movie/Movies';
+import Movies from './pages/MovieAdd/MovieAdd';
 import Search from './pages/Search/Search';
 
 function App() {
