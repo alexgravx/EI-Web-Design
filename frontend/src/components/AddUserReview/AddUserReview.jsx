@@ -11,13 +11,14 @@ const DEFAULT_FORM_VALUES = {
 };
 
 function AddReview({ onSuccessfulReviewCreation, currentmovie }) {
-  const [formValues, setFormValues] = useState(DEFAULT_FORM_VALUES);
+  var [formValues, setFormValues] = useState(DEFAULT_FORM_VALUES);
 
   const SaveReview = () => {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/reviews/new`, formValues)
       .then(() => {
         setFormValues(DEFAULT_FORM_VALUES);
+        console.log(formValues);
         onSuccessfulReviewCreation();
       })
       .catch((error) => {
@@ -32,7 +33,6 @@ function AddReview({ onSuccessfulReviewCreation, currentmovie }) {
         onClick={
           (() =>
             setFormValues({
-              ...formValues,
               rating: 1,
               movie_id: currentmovie.id,
               movie_title: currentmovie.original_title,
@@ -47,7 +47,6 @@ function AddReview({ onSuccessfulReviewCreation, currentmovie }) {
         onClick={
           (() =>
             setFormValues({
-              ...formValues,
               rating: 0,
               movie_id: currentmovie.id,
               movie_title: currentmovie.original_title,
