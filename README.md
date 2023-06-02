@@ -1,6 +1,120 @@
 # PopMovie
 
+.
+├── backend
+│   ├── bdd_dumps_movies
+│   ├── bdd_dumps_users
+│   ├── entities
+│   ├── migrations
+│   ├── node_modules  [344 entries exceeds filelimit, not opening dir]
+│   ├── routes
+│   ├── services
+│   └── utils
+└── frontend
+    ├── node_modules  [296 entries exceeds filelimit, not opening dir]
+    ├── public
+    └── src
+        ├── components
+        │   ├── AddMovieForm
+        │   ├── AddUserReview
+        │   ├── Banner
+        │   ├── Header
+        │   ├── Movie
+        │   ├── MovieTable
+        │   ├── Navbar
+        │   └── UsersTable
+        └── pages
+            ├── Home
+            ├── MovieAdd
+            ├── Search
+            └── User
 
+.
+├── README.md
+├── package-lock.json
+├── package.json
+├── frontend
+│   ├── index.html
+│   ├── public
+│   │   └── vite.svg
+│   ├── vite.config.js
+│   ├── node_modules  [296 entries exceeds filelimit, not opening dir]
+│   ├── package.json
+│   ├── package-lock.json
+│   └── src
+│       ├── index.jsx
+│       ├── index.css
+│       ├── App.jsx
+│       ├── pages
+│       │   ├── MovieAdd
+│       │   │   ├── MovieAdd.css
+│       │   │   └── MovieAdd.jsx
+│       │   ├── Search
+│       │   │   ├── searchicon.png
+│       │   │   ├── Search.css
+│       │   │   └── Search.jsx
+│       │   ├── Home
+│       │   │   ├── searchicon.png
+│       │   │   ├── Home.css
+│       │   │   ├── Home.jsx
+│       │   │   └── favicon.ico
+│       │   └── User
+│       │       ├── User.css
+│       │       └── User.jsx
+│       └── components
+│           ├── Header
+│           │   ├── Header.css
+│           │   └── Header.jsx
+│           ├── MovieTable
+│           │   ├── MovieTable.css
+│           │   └── MovieTable.jsx
+│           ├── UsersTable
+│           │   ├── UsersTable.jsx
+│           │   └── UsersTable.css
+│           ├── AddMovieForm
+│           │   ├── AddMovieForm.css
+│           │   └── AddMovieForm.jsx
+│           ├── Banner
+│           │   ├── Banner.css
+│           │   └── Banner.jsx
+│           ├── Movie
+│           │   ├── Movie.css
+│           │   └── Movie.jsx
+│           ├── Navbar
+│           │   ├── thumbnail_IMG-0400.png
+│           │   ├── Navbar.css
+│           │   └── Navbar.jsx
+│           └── AddUserReview
+│               └── AddUserReview.jsx
+└── backend
+    ├── datasource.js
+    ├── package.json
+    ├── postmigration.sh
+    ├── services
+    │   ├── jsonErrorHandler.js
+    │   └── routeNotFoundJsonHandler.js
+    ├── node_modules  [344 entries exceeds filelimit, not opening dir]
+    ├── package-lock.json
+    ├── entities
+    │   ├── movies.js
+    │   ├── user.js
+    │   └── reviews.js
+    ├── bdd_dumps_movies  [87 entries exceeds filelimit, not opening dir]
+    ├── bdd_dumps_users  [46 entries exceeds filelimit, not opening dir]
+    ├── utils
+    │   ├── insert_bdd_movies.js
+    │   └── insert_bdd_users.js
+    ├── migrations
+    │   ├── 1685653294347-MigrationSimplificationTables.js
+    │   ├── 1685701134393-ModifReviewColumnsNames.js
+    │   └── 1685701214485-ModifReviewColumnsNames.js
+    ├── database.sqlite3
+    ├── routes
+    │   ├── index.js
+    │   ├── movies.js
+    │   ├── users.js
+    │   └── review.js
+    └── server.js
 
 ## Getting started
 
