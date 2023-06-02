@@ -2,10 +2,11 @@
   margin-right: 10px;
   left: 50%;
   position: relative;
+  size: 10%;
 }
 
 .add-movie-input {
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
 }
 

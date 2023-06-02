@@ -1,26 +1,45 @@
 .white-table {
+  color:white;
   width: 100%;
   border-collapse: collapse;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  margin-top: 5%
-  ;
+  table-layout: fixed;
 }
 
 .white-table th,
 .white-table td {
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #ffffff;
 }
 
 .white-table th {
-  background-color: #818181;
+  background-color: #070707;
   font-weight: bold;
 }
-.white-table tr{
+
+.white-table tr {
+  background-color: #101010rgb(104, 101, 97);
+}
+
+.white-table tr:hover {
   background-color: rgb(104, 101, 97);
 }
-.white-table tr:hover {
-  background-color: #f9f9f9;
+.buttonDelete{
+  cursor: pointer;
+  position: relative;
+  left :37%;
+  background-color: rgba(125, 123, 123, 0.99);
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+
+}
+
+
+.sort-asc::after {
+  content: ' ▲';
+}
+
+.sort-desc::after {
+  content: ' ▼';
 }
