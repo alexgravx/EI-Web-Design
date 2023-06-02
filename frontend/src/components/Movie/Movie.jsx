@@ -39,22 +39,27 @@ function Movie({ movies }) {
           {currentMovie && currentMovie.id === film.id && (
             <div className={`popup ${currentMovie && 'active'}`}>
               <div className="popup-content">
-                <h2>{currentMovie.original_title}</h2>
                 <img
                   className="popup-image"
                   alt="poster"
-                  src={`https://image.tmdb.org/t/p/w1280${currentMovie.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/w1280${currentMovie.backdrop_path}`}
                 />
-                <div className="popup-text">
-                  <h2>{currentMovie.vote_average}/10</h2>
-                </div>
-                <div className="button-container">
-                  <button className="like-button" onClick={handleLike}>
-                    <FontAwesomeIcon icon={faThumbsUp} />
-                  </button>
-                  <button className="dislike-button" onClick={handleDislike}>
-                    <FontAwesomeIcon icon={faThumbsDown} />
-                  </button>
+                <div className="detail">
+                  <div className="button-container">
+                    <div className="lk-buttons">
+                      <button className="like-button" onClick={handleLike}>
+                        <FontAwesomeIcon icon={faThumbsUp} />
+                      </button>
+                      <button className="dislike-button" onClick={handleDislike}>
+                        <FontAwesomeIcon icon={faThumbsDown} />
+                      </button>
+                    </div>
+                    <h1 className="titlepop">{currentMovie.original_title}</h1>
+                  </div>
+                  <h2 className="textvote">
+                    Recommandé à {currentMovie.vote_average * 10}%
+                  </h2>
+                  <h2 className="textOV">{currentMovie.overview}</h2>
                 </div>
                 <button className="button-close" onClick={closePopup}></button>
               </div>

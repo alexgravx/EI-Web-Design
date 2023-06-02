@@ -30,10 +30,10 @@
   top: 50%;
   left: 50%;
   height: 450px;
-  width: 300px;
+  width: 500px;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 1);
-  padding: 75px;
+  padding: 0px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
   color: #fff;
@@ -49,9 +49,17 @@
 }
 
 .popup img {
-  width: 130px;
+  width: 500px;
   height: 215px;
-  margin-bottom: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+
+  
+}
+.titlepop{
+  text-align: left;
+  margin-right: 20px ;
 }
 
 .popup p {
@@ -96,45 +104,69 @@
 .button-close::after {
   content: '';
   position: absolute;
+  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
   width: 20px;
   height: 2px;
-  background-color: #fff;
+  background-color: #8a3434;}
 
 .popup.active .like-button, .popup.active .dislike-button {
   display: block; /*Show the like and dislike buttons when the popup is active */
 }
-
+.detail{
+  display: flex;
+  flex-direction: column;
+}
 .button-close::before {
   transform: translate(-50%, -50%) rotate(45deg);
+}
+.textOV{
+  text-align: center ;
+  padding-bottom: 20px;
+  padding-left: 20px ;
+  padding-right: 20px ;
+  }
+.textvote{
+  text-align: left;
+  margin-left: 20px;
+  font-style: italic;
+
 }
 
 .button-close::after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.lk-buttons {
+  display: flex;
+  margin-left: 40px;
+}
+
 .like-button svg,
 .dislike-button svg {
-  margin-right: 5px;
+  margin-right: 20px;
+  font-size: 30px;
+  padding: 5%;
 }
+
 .dislike-button svg:hover {
-  margin-right: 5px;
+  margin-right: 20px;
   color: rgb(124, 0, 0);
   transform: scale(1.3);
 }
+
 .like-button svg:hover {
-  margin-right: 5px;
+  margin-right: 20px;
   color: rgb(23, 124, 0);
   transform: scale(1.3);
 }
 
-.popup-text {
-  margin-top: 20px;
-}
 
 .button-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-}
+  margin-right: 20px ;
+  }

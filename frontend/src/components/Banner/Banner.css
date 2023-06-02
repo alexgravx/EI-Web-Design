@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 200%;
   height: 500px; /* Adjust the height as needed */
   overflow: hidden;
 }
@@ -10,8 +11,28 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 200%;
 }
+.OVmovie{
+  position: absolute;
+  top :60%;
+  font-size: 20px;
+  width: 300px;
+  text-align: left;
+  padding: 20px;
 
+}
+.titlemovie{
+  position: absolute;
+  text-transform: uppercase;
+  width: 650px;
+  font-size: 40px;
+  top :50%;
+  text-align: left;
+  padding: 20px;
+
+
+}
 .carousel-arrow {
   position: absolute;
   top: 50%;
