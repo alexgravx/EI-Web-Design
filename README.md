@@ -1,6 +1,6 @@
 # PopMovie Project
 
-<img src="./frontend/src/components/Navbar/thumbnail_IMG-0400.png" width="120">
+<img src="./popmovie-frontend/src/components/Navbar/thumbnail_IMG-0400.png" width="120">
 
 ## 📖 Description
 
