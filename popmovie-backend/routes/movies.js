@@ -11,6 +11,9 @@ router.get('/', function (req, res) {
     .find({}) // méthode find pour faire une requête, on peut selectionner avec {select: {firstName: true} filtrer avec {where: {firstName: "Timber"}}, retourne une promesse.
     .then(function (movies) {
       res.json({ movies: movies });
+    })
+    .catch(function (error) {
+      console.error(error);
     });
 });
 
