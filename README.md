@@ -12,9 +12,14 @@ Personalized film recommendation web application. Presentation of popular films 
 
 First of all, you can install dependencies with:
 
+In the backend:
 ```
 npm install
 npm install typeorm
+``````
+
+In the frontend:
+``````
 npm install
 npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 ```
@@ -114,6 +119,60 @@ L'installation doit être faite selon l'arborescence suivante:
     └── server.js
 
 ```
+
+## Mise en production
+
+Le serveur peut être mis en production. Les étapes sont:
+
+1) Création des fichiers nécéssaires:
+
+Dans le backend, on crée un fichier `ecosystem.config.cjs` à la racine du backend pour exporter les variables d'environnement avec pm2
+
+```
+module.exports = {
+  apps: [
+    {
+      name: "server",
+      script: "./server.js",
+      env: {
+        NODE_ENV: "development",
+        DATABASE_NAME: "database.sqlite3",
+	CLIENT_URL: "*"
+      },
+    },
+  ],
+};
+```
+
+Le fichier de configuration nginx associé (reverse proxy), situé dans /etc/nginx/sites-enabled/ est:
+
+```
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name dns.fr;
+
+	location / {
+		root /var/www/<path_to_the_build>/build/;
+		index index.html index.htm;
+		try_files $uri /index.html;
+	}
+
+	location /api/ {
+		proxy_pass http://localhost:8000/;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection 'upgrade';
+		proxy_set_header Host $host;
+		proxy_cache_bypass $http_upgrade;
+	}
+}
+```
+
+2) On crée le build dans le frontend avec `npm run build` et on lance le back dans le backend avec `pm2 start ecosystem.config.cjs`
+
+3) On peut vérifier les logs dans `/var/logs/nginx/` pour nginx, avec `pm2 logs` pour pm2, avec des requêtes au backend via /api/<route> ou `npm run dev` pour le back, enfin on peut regarder dans la console javascript de l'inspecteur du navigateur pour le front (la partie "réseau" est intéréssante pour le lien front-backend)
 
 ## Support
 
