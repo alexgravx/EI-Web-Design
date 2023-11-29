@@ -172,7 +172,7 @@ server {
 
 2) On crée le build dans le frontend avec `npm run build` et on lance le back dans le backend avec `pm2 start ecosystem.config.cjs`
 
-3) On peut vérifier les logs dans `/var/logs/nginx/` pour nginx, avec `pm2 logs` pour pm2, avec des requêtes au backend via /api/<route> ou `npm run dev` pour le back, enfin on peut regarder dans la console javascript de l'inspecteur du navigateur pour le front (la partie "réseau" est intéréssante pour le lien front-backend)
+3) On peut vérifier les logs dans `/var/logs/nginx/` pour nginx, avec `pm2 logs` pour pm2, avec des requêtes au backend via `/api/<route>` ou `npm run dev` pour le back, enfin on peut regarder dans la console javascript de l'inspecteur du navigateur pour le front (la partie "réseau" est intéréssante pour le lien front-backend)
 
 ## Support
 
