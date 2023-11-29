@@ -144,7 +144,7 @@ module.exports = {
 };
 ```
 
-Le fichier de configuration nginx associé (reverse proxy), situé dans /etc/nginx/sites-enabled/ est:
+Le fichier de configuration nginx associé (reverse proxy), situé dans `/etc/nginx/sites-enabled/` est:
 
 ```
 server {
