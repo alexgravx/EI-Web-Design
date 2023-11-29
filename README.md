@@ -16,10 +16,10 @@ In the backend:
 ```
 npm install
 npm install typeorm
-``````
+```
 
 In the frontend:
-``````
+```
 npm install
 npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 ```
