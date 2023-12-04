@@ -27,7 +27,7 @@ function useFetchMovies() {
 function Home() {
   // const [movieName, setMovieName] = useState(''); Pour la barre de recherche
   var movies = useFetchMovies();
-  movies = movies.slice(0, 2500);
+  movies = movies.slice(500, 1100);
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {

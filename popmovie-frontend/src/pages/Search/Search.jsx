@@ -30,7 +30,7 @@ function useFetchMovies() {
 function Search() {
   const [movieName, setMovieName] = useState('');
   var movies = useFetchMovies();
-  movies = movies.slice(0, 2500);
+  movies = movies.slice(1100, 1900);
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
